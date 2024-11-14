@@ -1,14 +1,15 @@
-// src/app/login/login.component.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { provideHttpClient } from '@angular/common/http';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [CommonModule, FormsModule],
+  providers: [provideHttpClient()],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
@@ -21,12 +22,8 @@ export class LoginComponent {
 
   onSubmit() {
     this.authService.login(this.email, this.password).subscribe({
-      next: (response) => {
-        this.router.navigate(['/home']); // Redireciona para a página 'home' após login bem-sucedido
-      },
-      error: () => {
-        this.errorMessage = 'Usuário ou senha incorretos';
-      }
+      next: () => this.router.navigate(['/home']),
+      error: () => (this.errorMessage = 'Credenciais inválidas')
     });
   }
 }
