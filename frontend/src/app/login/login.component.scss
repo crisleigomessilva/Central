@@ -1,0 +1,86 @@
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+// Fundo degradê personalizado
+.bg-custom-gradient {
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+}
+
+// Estilos principais
+.login-container {
+  max-width: 900px;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+// Welcome Section
+.welcome-section {
+  background: linear-gradient(135deg, #4226de, #041d5e);
+  color: #fff;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+// Login Section
+.login-section {
+  background: rgba(255, 255, 255, 0.9);
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .form-control {
+    padding-left: 2.5rem;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+  }
+
+  .icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8331e1;
+  }
+
+  .forgot-password {
+    font-size: 0.9rem;
+    color: #f208d3;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .btn-primary {
+    background-color: #4a00e0;
+    border: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #8e2de2;
+    }
+  }
+}
+
+// Social icons
+.social-icons i {
+  font-size: 1.5rem;
+  color: #1d9b97;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #8e2de2;
+  }
+}
