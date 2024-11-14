@@ -13,5 +13,9 @@ const appConfig = {
   ]
 };
 
-bootstrapApplication(AppComponent, appConfig)
+bootstrapApplication(AppComponent, 
+  providers:[
+    provideHttpClient(),
+  ]
+  appConfig)
   .catch((err) => console.error(err));
